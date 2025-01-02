@@ -96,15 +96,17 @@ export const AccountMenu = () => {
           </HeaderMenuItemsSection>
           <HeaderMenuItemsSection>
             {ENABLE_DATASTAX_LANGFLOW ? (
-              <HeaderMenuItemLink
-                newPage
-                href="https://github.com/langflow-ai/langflow"
-              >
-                <div className="-my-2 mr-2 flex w-full items-center justify-between">
-                  <div className="text-sm">Star the repo</div>
-                  <GithubStarComponent />
-                </div>
-              </HeaderMenuItemLink>
+              <>
+                {/*<HeaderMenuItemLink*/}
+                {/*    newPage*/}
+                {/*    href="https://github.com/langflow-ai/langflow"*/}
+                {/*>*/}
+                {/*  <div className="-my-2 mr-2 flex w-full items-center justify-between">*/}
+                {/*    <div className="text-sm">Star the repo</div>*/}
+                {/*    <GithubStarComponent />*/}
+                {/*  </div>*/}
+                {/*</HeaderMenuItemLink>*/}
+              </>
             ) : (
               <HeaderMenuItemLink
                 newPage

@@ -17,7 +17,6 @@ import useAlertStore from "@/stores/alertStore";
 import { useEffect, useRef, useState } from "react";
 import { AccountMenu } from "./components/AccountMenu";
 import FlowMenu from "./components/FlowMenu";
-import GithubStarComponent from "./components/GithubStarButton";
 
 export default function AppHeader(): JSX.Element {
   const notificationCenter = useAlertStore((state) => state.notificationCenter);
@@ -81,84 +80,84 @@ export default function AppHeader(): JSX.Element {
       <div className={`flex items-center gap-2`}>
         {!ENABLE_DATASTAX_LANGFLOW && (
           <>
-            <Button
-              unstyled
-              className="hidden items-center whitespace-nowrap pr-2 2xl:inline"
-              onClick={() =>
-                window.open("https://github.com/langflow-ai/langflow", "_blank")
-              }
-            >
-              <GithubStarComponent />
-            </Button>
+            {/*<Button*/}
+            {/*  unstyled*/}
+            {/*  className="hidden items-center whitespace-nowrap pr-2 2xl:inline"*/}
+            {/*  onClick={() =>*/}
+            {/*    window.open("https://github.com/langflow-ai/langflow", "_blank")*/}
+            {/*  }*/}
+            {/*>*/}
+            {/*  <GithubStarComponent />*/}
+            {/*</Button>*/}
           </>
         )}
-        <AlertDropdown
-          notificationRef={notificationContentRef}
-          onClose={() => setActiveState(null)}
-        >
-          <ShadTooltip
-            content="Notifications and errors"
-            side="bottom"
-            styleClasses="z-10"
-          >
-            <AlertDropdown onClose={() => setActiveState(null)}>
-              <Button
-                ref={notificationRef}
-                variant="ghost"
-                className={`relative ${activeState === "notifications" ? "bg-accent text-accent-foreground" : ""}`}
-                onClick={() =>
-                  setActiveState((prev) =>
-                    prev === "notifications" ? null : "notifications",
-                  )
-                }
-                data-testid="notification_button"
-              >
-                <span
-                  className={
-                    notificationCenter
-                      ? `absolute left-[31px] top-[10px] h-1 w-1 rounded-full bg-destructive`
-                      : "hidden"
-                  }
-                />
-                <ForwardedIconComponent
-                  name="Bell"
-                  className="side-bar-button-size h-[18px] w-[18px]"
-                />
-                <span className="hidden whitespace-nowrap 2xl:inline">
-                  Notifications
-                </span>
-              </Button>
-            </AlertDropdown>
-          </ShadTooltip>
-        </AlertDropdown>
+        {/*<AlertDropdown*/}
+        {/*  notificationRef={notificationContentRef}*/}
+        {/*  onClose={() => setActiveState(null)}*/}
+        {/*>*/}
+        {/*  <ShadTooltip*/}
+        {/*    content="Notifications and errors"*/}
+        {/*    side="bottom"*/}
+        {/*    styleClasses="z-10"*/}
+        {/*  >*/}
+        {/*    <AlertDropdown onClose={() => setActiveState(null)}>*/}
+        {/*      <Button*/}
+        {/*        ref={notificationRef}*/}
+        {/*        variant="ghost"*/}
+        {/*        className={`relative ${activeState === "notifications" ? "bg-accent text-accent-foreground" : ""}`}*/}
+        {/*        onClick={() =>*/}
+        {/*          setActiveState((prev) =>*/}
+        {/*            prev === "notifications" ? null : "notifications",*/}
+        {/*          )*/}
+        {/*        }*/}
+        {/*        data-testid="notification_button"*/}
+        {/*      >*/}
+        {/*        <span*/}
+        {/*          className={*/}
+        {/*            notificationCenter*/}
+        {/*              ? `absolute left-[31px] top-[10px] h-1 w-1 rounded-full bg-destructive`*/}
+        {/*              : "hidden"*/}
+        {/*          }*/}
+        {/*        />*/}
+        {/*        <ForwardedIconComponent*/}
+        {/*          name="Bell"*/}
+        {/*          className="side-bar-button-size h-[18px] w-[18px]"*/}
+        {/*        />*/}
+        {/*        <span className="hidden whitespace-nowrap 2xl:inline">*/}
+        {/*          Notifications*/}
+        {/*        </span>*/}
+        {/*      </Button>*/}
+        {/*    </AlertDropdown>*/}
+        {/*  </ShadTooltip>*/}
+        {/*</AlertDropdown>*/}
         {!ENABLE_DATASTAX_LANGFLOW && (
           <>
-            <ShadTooltip
-              content="Go to LangflowStore"
-              side="bottom"
-              styleClasses="z-10"
-            >
-              <Button
-                variant="ghost"
-                className={` ${lastPath === "store" ? "bg-accent text-accent-foreground" : ""}`}
-                onClick={() => {
-                  navigate("/store");
-                }}
-                data-testid="button-store"
-              >
-                <ForwardedIconComponent
-                  name="Store"
-                  className="side-bar-button-size h-[18px] w-[18px]"
-                />
-                <span className="hidden whitespace-nowrap 2xl:inline">
-                  Store
-                </span>
-              </Button>
-            </ShadTooltip>
-            <Separator
-              orientation="vertical"
-              className="my-auto h-7 dark:border-zinc-700"
-            />
+            {/*<ShadTooltip*/}
+            {/*  content="Go to LangflowStore"*/}
+            {/*  side="bottom"*/}
+            {/*  styleClasses="z-10"*/}
+            {/*>*/}
+            {/*  <Button*/}
+            {/*    variant="ghost"*/}
+            {/*    className={` ${lastPath === "store" ? "bg-accent text-accent-foreground" : ""}`}*/}
+            {/*    onClick={() => {*/}
+            {/*      navigate("/store");*/}
+            {/*    }}*/}
+            {/*    data-testid="button-store"*/}
+            {/*  >*/}
+            {/*    <ForwardedIconComponent*/}
+            {/*      name="Store"*/}
+            {/*      className="side-bar-button-size h-[18px] w-[18px]"*/}
+            {/*    />*/}
+            {/*    <span className="hidden whitespace-nowrap 2xl:inline">*/}
+            {/*      Store*/}
+            {/*    </span>*/}
+            {/*  </Button>*/}
+            {/*</ShadTooltip>*/}
+            {/*<Separator*/}
+            {/*  orientation="vertical"*/}
+            {/*  className="my-auto h-7 dark:border-zinc-700"*/}
+            {/*/>*/}
           </>
         )}
         {ENABLE_DATASTAX_LANGFLOW && (
